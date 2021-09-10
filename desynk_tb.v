@@ -16,6 +16,7 @@ module desynk_tb;
   initial begin
     string filename;
 
+    // This is the +vcd=desynk_tb.vcd on the command line
     if (!$value$plusargs("vcd=%s", filename))
       filename = "default.vcd";
     $dumpfile(filename);
@@ -29,8 +30,10 @@ module desynk_tb;
 
 
 
-  top DUT(.CLK(clk),
-             .LED1(led1));
+  top DUT (
+           .CLK(clk),
+           .LED1(led1)
+          );
 
 
 endmodule
