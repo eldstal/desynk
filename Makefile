@@ -5,11 +5,16 @@ PIN_DEF=icebreaker.pcf
 DEVICE=up5k
 PACKAGE=sg48
 
-ADD_CLEAN=$(PROJ)_tb.vcd
+TESTBENCHES:=$(wildcard *_tb.v)
+TB_WAVES:=$(patsubst %_tb.v,%_tb.vcd,$(TESTBENCHES))
+MODULES:=$(filter-out $(TESTBENCHES),$(wildcard *.v))
+
+ADD_SRC:=$(filter-out desynk.v,$(MODULES))
+ADD_CLEAN:=$(TB_WAVES)
 
 all: $(PROJ).bin
 
-test: $(PROJ)_tb.vcd
+test: $(TB_WAVES)
 
 %.json: %.v $(ADD_SRC) $(ADD_DEPS)
 	yosys -ql $*.log -p 'synth_ice40 -top top -json $@' $< $(ADD_SRC)
@@ -25,7 +30,7 @@ test: $(PROJ)_tb.vcd
 %.bin: %.asc
 	icepack $< $@
 
-%_tb: %_tb.v %.v
+%_tb: %_tb.v %.v $(ADD_SRC)
 	iverilog -g2012 -o $@ $^
 
 %_tb.vcd: %_tb
@@ -45,3 +50,9 @@ iceprog: $(PROJ).bin
 
 clean:
 	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).bin $(PROJ).json $(PROJ).log $(ADD_CLEAN)
+
+info:
+	echo $(wildcard *.v)
+	echo $(TESTBENCHES)
+	echo $(MODULES)
+	echo $(TB_WAVES)

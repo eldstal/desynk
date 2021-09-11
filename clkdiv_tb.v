@@ -2,9 +2,12 @@
 
 module desynk_tb;
 
-  reg rst;
   reg clk;
-  reg led1;
+  reg rst;
+
+  logic clk_2;
+  logic clk_3;
+  logic clk_4;
 
   parameter CLOCK_HALF_PERIOD = 1;
 
@@ -28,7 +31,6 @@ module desynk_tb;
     #4;
     rst <= 0;
 
-
     #40;
     $finish;
 
@@ -36,11 +38,9 @@ module desynk_tb;
 
 
 
-  top DUT (
-           .rst(rst),
-           .clk(clk),
-           .led1(led1)
-          );
+  clkdiv #(.DIV(2)) DUT_2 (.rst(rst), .clk_i(clk), .clk_o(clk_2) );
+  clkdiv #(.DIV(3)) DUT_3 (.rst(rst), .clk_i(clk), .clk_o(clk_3) );
+  clkdiv #(.DIV(4)) DUT_4 (.rst(rst), .clk_i(clk), .clk_o(clk_4) );
 
 
 endmodule
