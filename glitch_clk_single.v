@@ -15,35 +15,38 @@ module glitch_clk_single(
 parameter N_HALFCYCLES=2;
 
 reg active = 0;
-reg [N_HALFCYCLES-1:0] counter;
+reg polarity = 0;
+reg [N_HALFCYCLES:0] counter;
+
+assign clk_o = clean_target_clock ^ (active & (clk ^ polarity));
 
 always @(posedge clk) begin
   if (rst) begin
-    clock_select <= 0;
     counter <= 0;
     active <= 0;
   end
   else begin
-    if (counter == 0) begin
-      active <= 1;
-    else
-    counter[N-1:0] <= { counter[N-2:0], 1'b0 };
-    if (counter == 0) active <= 0;
+    if (active) begin
+      counter[N_HALFCYCLES:0] <= { counter[N_HALFCYCLES-1:0], 1'b0 };
+      if (counter == 0) active <= 0;
+    end
   end
 end
 
 always @(negedge clk) begin
   if (!rst) begin
-    counter[N-1:0] <= { counter[N-2:0], 1'b0 };
+    counter[N_HALFCYCLES:0] <= { counter[N_HALFCYCLES-1:0], 1'b0 };
 
-    if (counter == 0) active <= 0;
+    if (counter[N_HALFCYCLES-1:0] == 0) active <= 0;
   end
 end
 
 always @(posedge trig) begin
   if (!rst) begin
-    if (!clock_select) begin
+    if (!active) begin
       counter[0] <= 1;
+      active <= 1;
+      //polarity <= !clk;
     end
   end
 end
