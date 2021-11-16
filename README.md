@@ -20,7 +20,7 @@ I2C bus must be sniffed to detect a specific message. Implement a new
 _Detector_ module and connect it!
 
 The _Control_ block consists of a very simple state machine:
-1. Wait for the target device to become _Ready_
+1. Wait for the trigger signal, indicating the target is ready
 2. Start the delay countdown
 3. At the end of the delay, inject a glitch
 4. If a _Success_ signal is detected, halt
@@ -36,7 +36,7 @@ do.
 
 A target device, running something sensitive. For example, computes some hash and checks its result against a fixed "proper" value.
 
-Connections to the Desynk board:
+Connections to the DESYNK board:
 
 * CLK which drives the target device
 * TRIGGER which the target sets HIGH at a fixed time before the check
