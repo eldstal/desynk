@@ -9,6 +9,28 @@ Break black-box hardware devices by messing with their clock or power feed.
 Specifically, a glitch introduced at the right time can bypass individual instructions,
 which has interesting security implications.
 
+## Functionality
+![Block diagram of DESYNK](doc/block.png)
+
+Several of the blocks above are designed to have drop-in replacements. For
+example, the _Detector_ module used to trigger glitching. This must detect a
+predictable and stable starting state in the target device. In some cases,
+perhaps it's enough to snoop an indicator LED. For other targets, perhaps an
+I2C bus must be sniffed to detect a specific message. Implement a new
+_Detector_ module and connect it!
+
+The _Control_ block consists of a very simple state machine:
+1. Wait for the target device to become _Ready_
+2. Start the delay countdown
+3. At the end of the delay, inject a glitch
+4. If a _Success_ signal is detected, halt
+5. Alter the delay
+6. Reset the target device
+7. Start over
+
+On _Success_, we've found a specific _Delay_ value (counted in cycles) and a
+specific _glitch mode_ which causes the target device to do what we want it to
+do.
 
 ## Setup
 
@@ -34,7 +56,11 @@ The top button starts glitching. The top LED indicates that glitching is underwa
 
 ## Ideas
 
-Modular trigger mode:
+Modular target control to reset the target
+* Direct power control
+* Reset pin on the target
+
+Modular detector for TRIGGER and SUCCESS signals
 * Signal pin
 * UART snooping
 
