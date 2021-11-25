@@ -44,6 +44,11 @@ Connections to the DESYNK board:
 * POWER which enables the power feed to the target device
 * BROWNOUT which grounds the power feed of the target device
 
+### Glitch Modes
+`glitch_clk_fast` will inject a number of faster clock cycles on the target's clock input. The following figure shows three different
+instances of the glitching module, injecting 1, 2 and 7 cycles respectively.
+![Example of fast-clock glitching](doc/glitch_clock.png)
+
 
 ## Usage
 **This is all theoretical, since nothing is implemented**
