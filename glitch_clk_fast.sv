@@ -18,12 +18,14 @@ parameter N_CYCLES=1;
 // ACTIVE is injecting fast clock cycles
 // RECOVER is waiting for the next target cycle, to avoid additional short cycles
 // FINISHED is waiting for the trigger signal to go low again
+/*
 parameter IDLE=0;
 parameter WAIT=1;
 parameter ACTIVE=2;
 parameter RECOVER=3;
 parameter FINISHED=3;
-reg [2:0] state;
+*/
+enum reg [2:0] { IDLE, WAIT, ACTIVE, RECOVER, FINISHED } state;
 
 reg [15:0] injected_cycles;
 

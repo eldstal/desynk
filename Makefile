@@ -5,18 +5,18 @@ PIN_DEF=icebreaker.pcf
 DEVICE=up5k
 PACKAGE=sg48
 
-TESTBENCHES:=$(wildcard *_tb.v)
-TB_WAVES:=$(patsubst %_tb.v,%_tb.vcd,$(TESTBENCHES))
-MODULES:=$(filter-out $(TESTBENCHES),$(wildcard *.v))
+TESTBENCHES:=$(wildcard *_tb.sv)
+TB_WAVES:=$(patsubst %_tb.sv,%_tb.vcd,$(TESTBENCHES))
+MODULES:=$(filter-out $(TESTBENCHES),$(wildcard *.sv))
 
-ADD_SRC:=$(filter-out desynk.v,$(MODULES))
+ADD_SRC:=$(filter-out desynk.sv,$(MODULES))
 ADD_CLEAN:=$(TB_WAVES)
 
 all: $(PROJ).bin
 
 test: $(TB_WAVES)
 
-%.json: %.v $(ADD_SRC) $(ADD_DEPS)
+%.json: %.sv $(ADD_SRC) $(ADD_DEPS)
 	yosys -ql $*.log -p 'synth_ice40 -top top -json $@' $< $(ADD_SRC)
 
 %.asc: $(PIN_DEF) %.json
@@ -30,7 +30,7 @@ test: $(TB_WAVES)
 %.bin: %.asc
 	icepack $< $@
 
-%_tb: %_tb.v %.v $(ADD_SRC)
+%_tb: %_tb.sv %.sv $(ADD_SRC)
 	iverilog -g2012 -o $@ $^
 
 %_tb.vcd: %_tb
@@ -39,7 +39,7 @@ test: $(TB_WAVES)
 %_syn.v: %.json
 	yosys -p 'read_json $^; write_verilog $@'
 
-%_syntb: %_tb.v %_syn.v
+%_syntb: %_tb.sv %_syn.v
 	iverilog -o $@ $^ `yosys-config --datdir/ice40/cells_sim.v`
 
 %_syntb.vcd: %_syntb
@@ -52,7 +52,7 @@ clean:
 	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).bin $(PROJ).json $(PROJ).log $(ADD_CLEAN)
 
 info:
-	echo $(wildcard *.v)
-	echo $(TESTBENCHES)
-	echo $(MODULES)
-	echo $(TB_WAVES)
+	@echo $(wildcard *.sv)
+	@echo $(TESTBENCHES)
+	@echo $(MODULES)
+	@echo $(TB_WAVES)
