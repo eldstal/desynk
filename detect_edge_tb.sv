@@ -89,7 +89,7 @@ module detect_edge_tb;
 
   detect_edge #(
                  .TRIG_CYCLES(1),
-                 .LEADING_EDGE(1)
+                 .RISING_EDGE(1)
                ) DUT_1 (
       .rst(rst),
       .clk(clk),
@@ -100,7 +100,7 @@ module detect_edge_tb;
 
   detect_edge #(
                  .TRIG_CYCLES(3),
-                 .LEADING_EDGE(1)
+                 .RISING_EDGE(1)
                ) DUT_3 (
       .rst(rst),
       .clk(clk),
@@ -111,7 +111,7 @@ module detect_edge_tb;
 
   detect_edge #(
                  .TRIG_CYCLES(1),
-                 .LEADING_EDGE(0)
+                 .RISING_EDGE(0)
                ) DUT_N_1 (
       .rst(rst),
       .clk(clk),
