@@ -5,9 +5,7 @@ module desynk_tb;
   reg clk;
   reg rst;
 
-  logic clk_2;
   logic clk_3;
-  logic clk_4;
 
   parameter CLOCK_HALF_PERIOD = 1;
 
@@ -38,9 +36,7 @@ module desynk_tb;
 
 
 
-  clkdiv #(.DIV(2)) DUT_2 (.rst(rst), .clk_i(clk), .clk_o(clk_2) );
-  clkdiv #(.DIV(3)) DUT_3 (.rst(rst), .clk_i(clk), .clk_o(clk_3) );
-  clkdiv #(.DIV(4)) DUT_4 (.rst(rst), .clk_i(clk), .clk_o(clk_4) );
+  clk_div_3 DUT_3 (.rst(rst), .clk_i(clk), .clk_o(clk_3) );
 
 
 endmodule

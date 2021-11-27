@@ -6,7 +6,8 @@ module top(
 
   output target_clk,
 
-  input target_ready_gpio
+  input target_ready_gpio,
+  input target_success_gpio
 );
 
 // This goes to all over the place
@@ -34,10 +35,24 @@ wire success_arm;
  * before being passed to the target device.
  *
  */
-clkdiv #(.DIV(3)) Divider (
+clk_div_3 Divider (
   .rst(rst),
   .clk_i(clk),
   .clk_o(clean_target_clock)
+);
+
+/*
+ * Main state machine
+ */
+controller Controller (
+  .rst(rst),
+  .clk(clk),
+  .trigger(trigger),
+  .success(success),
+  .delay(delay_cycles),
+  .set_delay(set_delay),
+  .trigger_arm(trigger_arm),
+  .success_arm(success_arm)
 );
 
 /*

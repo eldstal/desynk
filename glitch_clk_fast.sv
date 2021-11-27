@@ -21,22 +21,28 @@ parameter N_CYCLES=1;
 enum reg [2:0] { IDLE, WAIT, ACTIVE, RECOVER, FINISHED } state;
 
 reg [15:0] injected_cycles;
+reg fast_clock;
 
 assign clk_o = ((state == WAIT) & clean_target_clock) |
                ((state == IDLE) & clean_target_clock) |
-               ((state == ACTIVE) & clk) |
+               ((state == ACTIVE & fast_clock) & clk) |
+               ((state == ACTIVE & !fast_clock) & 1'b0) |
                ((state == RECOVER) & 1'b0);
 
 
 
 always @(posedge clk) begin
   if (rst) begin
-    state <= IDLE;
     injected_cycles <= 0;
+    fast_clock <= 0;
   end
   else begin
-    if (state == ACTIVE) begin
-      if (injected_cycles >= N_CYCLES-1) state <= RECOVER;
+    if (state == WAIT) begin
+      injected_cycles <= 0;
+      fast_clock <= 1;
+    end
+    else if (state == ACTIVE) begin
+      if (injected_cycles >= N_CYCLES-1) fast_clock <= 0;
       else injected_cycles <= injected_cycles + 1;
     end
   end
@@ -46,25 +52,33 @@ end
 // Our state changes synchronize with the target clock
 // This way we don't confuse the target device prematurely
 always @(posedge clean_target_clock) begin
-  if (state == IDLE) begin
-    if (trig) state <= WAIT;
-
+  if (rst) begin
+    state <= IDLE;
   end
-  else if (state == WAIT) begin
+  else begin
+    if (state == IDLE) begin
+      if (trig) state <= WAIT;
 
-    injected_cycles <= 0;
-    state <= ACTIVE;
+    end
+    else if (state == WAIT) begin
 
-  end
-  else if (state == RECOVER) begin
+      state <= ACTIVE;
 
-    if (!trig) state <= IDLE;
-    else state <= FINISHED;
+    end
+    else if (state == ACTIVE) begin
+      if (!fast_clock) state <= RECOVER;
+    end
+    else if (state == RECOVER) begin
 
-  end
-  else if (state == FINISHED) begin
+      if (!trig) state <= IDLE;
+      else state <= FINISHED;
 
-    if (!trig) state <= IDLE;
+    end
+    else if (state == FINISHED) begin
+
+      if (!trig) state <= IDLE;
+
+    end
 
   end
 

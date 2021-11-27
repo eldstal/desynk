@@ -8,7 +8,7 @@ module detect_edge(
   input clk,
   input target,
   input arm,
-  output trigger
+  output reg trigger
 );
 
 parameter TRIG_CYCLES=1;
@@ -22,15 +22,12 @@ parameter RISING_EDGE=1;
 enum reg [2:0] { IDLE, WAIT, ARMED, ACTIVE, FINISHED } state;
 
 reg [4:0] triggered_cycles;
-reg trig_out;
-
-assign trigger = trig_out;
 
 always @(posedge clk) begin
   if (rst) begin
     state <= IDLE;
     triggered_cycles <= 0;
-    trig_out <= 0;
+    trigger <= 0;
   end
   else begin
 
@@ -48,7 +45,7 @@ always @(posedge clk) begin
     else if (state == ARMED) begin
       if (target == RISING_EDGE) begin
         state <= ACTIVE;
-        trig_out <= 1;
+        trigger <= 1;
         triggered_cycles <= 1;
       end
 
@@ -56,7 +53,7 @@ always @(posedge clk) begin
     else if (state == ACTIVE) begin
       if (triggered_cycles >= TRIG_CYCLES) begin
         state <= FINISHED;
-        trig_out <= 0;
+        trigger <= 0;
       end
       else triggered_cycles <= triggered_cycles + 1;
 
