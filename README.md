@@ -44,10 +44,16 @@ Connections to the DESYNK board:
 * POWER which enables the power feed to the target device
 * BROWNOUT which grounds the power feed of the target device
 
-### Glitch Modes
-`glitch_clk_fast` will inject a number of faster clock cycles on the target's clock input. The following figure shows three different
+## Glitch Modes
+### `glitch_clk_fast`
+Injects a number of faster clock cycles on the target's clock input. The following figure shows three different
 instances of the glitching module, injecting 1, 2 and 7 cycles respectively.
 ![Example of fast-clock glitching](doc/glitch_clock.png)
+
+
+## Detector Modules
+### `detect_edge`
+Triggered by a simple digital input signal. Set `RISING_EDGE=1` to detect leading edge, or `RISING_EDGE=0` to trigger on a falling edge.
 
 
 ## Usage
@@ -74,3 +80,7 @@ Modular glitch mode:
 * Skip cycle
 * Multiple quick cycles
 * Power glitches
+
+Some sort of parameter based way to select and configure the modules.
+Ideally, you can alter some commented parameters in a "config" file and then just instantiate a `desynk` which will
+be configured as you want it.

@@ -2,7 +2,11 @@ module top(
   input rst,
   input clk,
   output led1,
-  output target_clk
+
+
+  output target_clk,
+
+  input target_ready_gpio
 );
 
 // This goes to all over the place
@@ -15,10 +19,13 @@ wire clean_target_clock;
 // Signals to and from external modules
 wire trigger;
 wire delayed_trigger;
+wire success;
 
 // Signals controlled by the controller module
 wire [31:0] delay_cycles;
 wire set_delay;
+wire trigger_arm;
+wire success_arm;
 
 /*
  * FPGA runs at 48MHz.
@@ -34,12 +41,29 @@ clkdiv #(.DIV(3)) Divider (
 );
 
 /*
+ * The target's READY signal is a basic I/O pin.
+ * On a rising edge, our countdown begins
+ */
+detect_edge #(
+   .TRIG_CYCLES(2),
+   .RISING_EDGE(1)
+ ) Trigger (
+
+  .rst(rst),
+  .clk(clk),
+  .target(target_ready_gpio),
+  .arm(trigger_arm),
+  .trigger(trigger)
+
+);
+
+/*
  * Introduces a programmable delay to the trigger signal
  */
 trigger_delay #(.TRIG_CYCLES(2)) Delay (
   .rst(rst),
   .clk(clk),
-  .trig(trigger),
+  .trigger(trigger),
   .clean_target_clock(clean_target_clock),
   .delay(delay_cycles),
   .set_delay(set_delay),
@@ -56,6 +80,23 @@ glitch_clk_fast #(.N_CYCLES(2)) Glitch (
   .trig(delayed_trigger),
   .clean_target_clock(clean_target_clock),
   .clk_o(target_clk)
+);
+
+/*
+ * The target's SUCCESS signal is a basic I/O pin.
+ * On a falling edge, we know our attack was successful
+ */
+detect_edge #(
+   .TRIG_CYCLES(2),
+   .RISING_EDGE(1)
+ ) Success (
+
+  .rst(rst),
+  .clk(clk),
+  .target(target_success_gpio),
+  .arm(success_arm),
+  .trigger(success)
+
 );
 
 

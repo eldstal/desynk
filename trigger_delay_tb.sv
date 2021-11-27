@@ -78,7 +78,7 @@ module trigger_delay_tb;
   trigger_delay #(.TRIG_CYCLES(1)) DUT_1 (
       .rst(rst),
       .clk(clk),
-      .trig(trig),
+      .trigger(trig),
       .clean_target_clock(clean_target_clock),
       .delay(delay),
       .set_delay(set_delay_1),
@@ -88,7 +88,7 @@ module trigger_delay_tb;
   trigger_delay #(.TRIG_CYCLES(3)) DUT_3 (
       .rst(rst),
       .clk(clk),
-      .trig(trig),
+      .trigger(trig),
       .clean_target_clock(clean_target_clock),
       .delay(delay),
       .set_delay(set_delay_3),

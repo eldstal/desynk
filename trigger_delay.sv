@@ -6,7 +6,7 @@
 module trigger_delay(
   input rst,
   input clk,
-  input trig,
+  input trigger,
   input clean_target_clock,
   input [31:0] delay,
   input set_delay,
@@ -40,7 +40,7 @@ always @(posedge clk) begin
     if (set_delay) delay_cycles <= delay;
 
     if (state == IDLE) begin
-      if (trig) begin
+      if (trigger) begin
         state <= WAIT;
         elapsed_cycles <= 0;
         triggered_cycles <= 0;
@@ -54,7 +54,7 @@ always @(posedge clk) begin
       if (triggered_cycles >= TRIG_CYCLES) state <= FINISHED;
     end
     else if (state == FINISHED) begin
-      if (!trig) state <= IDLE;
+      if (!trigger) state <= IDLE;
     end
   end
 end
