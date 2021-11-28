@@ -4,31 +4,43 @@ module clk_div_3 (
   output clk_o
 );
 
-/*
- * This doesn't give a 50% duty cycle, so it's kind of a bad solution.
- * I don't have a good implementation yet.
- */
+// Design taken straight from https://www.onsemi.com/pub/Collateral/AND8001-D.PDF
 
 
 parameter WIDTH = 6;
 parameter N = 6;
 
 reg [WIDTH-1:0] pos_count, neg_count;
-wire [WIDTH-1:0] r_nxt;
 
-always @(posedge clk_i) begin
- if (rst) pos_count <=1;
- else if (pos_count ==N-1) pos_count <= 0;
- else pos_count<= pos_count +1;
+wire D0;
+wire D1;
+wire D2;
+
+reg Q0;
+reg Q1;
+reg Q2;
+
+assign D0 = !Q1 & !Q0;
+assign D1 = Q0;
+assign D2 = Q1;
+
+assign clk_o = Q2 | Q1;
+
+
+always_ff @(posedge clk_i) begin
+  if (rst) Q0 <= 0;
+  else Q0 <= D0;
 end
 
-always @(negedge clk_i) begin
- if (rst) neg_count <=0;
- else  if (neg_count ==N-1) neg_count <= 0;
- else neg_count<= neg_count +1;
+always_ff @(posedge clk_i) begin
+  if (rst) Q1 <= 0;
+  else Q1 <= D1;
 end
 
-assign clk_o = ((pos_count > (N>>1)) | (neg_count > (N>>1)));
+always_ff @(negedge clk_i) begin
+  if (rst) Q2 <= 0;
+  else Q2 <= D2;
+end
 
 
 endmodule
