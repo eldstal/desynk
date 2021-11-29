@@ -3,14 +3,15 @@
 
 <svg
    width="651.2204"
-   height="319.54672"
-   viewBox="0 0 172.30207 84.54674"
+   height="399.99344"
+   viewBox="0 0 172.30207 105.8316"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="block.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -23,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.5999719"
-     inkscape:cx="374.38156"
-     inkscape:cy="158.44028"
+     inkscape:zoom="1.131351"
+     inkscape:cx="296.99006"
+     inkscape:cy="147.16918"
      inkscape:window-width="1918"
      inkscape:window-height="1041"
      inkscape:window-x="1920"
      inkscape:window-y="18"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g30765-7"
+     inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-midpoints="true"
@@ -43,125 +44,129 @@
      width="1024px"
      inkscape:snap-text-baseline="true">
     <sodipodi:guide
-       position="105.2694,5.8325127"
+       position="105.2694,5.8325013"
        orientation="1,0"
        id="guide10209" />
     <sodipodi:guide
-       position="185.6695,-22.88592"
+       position="185.6695,-22.885931"
        orientation="0,-1"
        id="guide30157" />
     <sodipodi:guide
-       position="4.6371531,33.492653"
+       position="4.637153,33.492642"
        orientation="1,0"
        id="guide30804" />
     <sodipodi:guide
-       position="105.2694,33.492653"
+       position="105.2694,33.492642"
        orientation="0,-1"
        id="guide31584" />
     <sodipodi:guide
-       position="105.2694,-7.4315176"
+       position="105.2694,-7.4315289"
        orientation="0,-1"
        id="guide32137" />
     <sodipodi:guide
-       position="105.2694,20.757772"
+       position="105.2694,20.757761"
        orientation="0,-1"
        id="guide32139" />
     <sodipodi:guide
-       position="105.2694,-35.620806"
+       position="105.2694,-35.620817"
        orientation="0,-1"
        id="guide32141" />
     <sodipodi:guide
-       position="105.2694,-13.461553"
+       position="105.2694,-13.461564"
        orientation="0,-1"
        id="guide33248" />
     <sodipodi:guide
-       position="105.2694,-1.2243575"
+       position="105.2694,-1.2243688"
        orientation="0,-1"
        id="guide33250" />
     <sodipodi:guide
-       position="21.327985,16.440168"
+       position="21.327985,16.440157"
        orientation="1,0"
        id="guide33551" />
     <sodipodi:guide
-       position="34.659669,7.7054817"
+       position="34.659669,7.7054703"
        orientation="1,0"
        id="guide33553" />
     <sodipodi:guide
-       position="13.327264,7.2093817"
+       position="13.327264,7.2093703"
        orientation="1,0"
        id="guide33555" />
     <sodipodi:guide
-       position="54.526039,-22.88592"
+       position="54.526039,-22.885931"
        orientation="1,0"
        id="guide41486" />
     <sodipodi:guide
-       position="105.81654,49.033923"
+       position="105.81654,49.033911"
        orientation="0,-1"
        id="guide43504" />
     <sodipodi:guide
-       position="1.277198,83.269556"
+       position="117.09199,79.799531"
        orientation="0,-1"
        id="guide53196" />
     <sodipodi:guide
-       position="130.39226,22.65796"
+       position="130.39226,22.657949"
        orientation="0,-1"
        id="guide17442" />
     <sodipodi:guide
-       position="133.28619,26.750806"
+       position="133.28619,26.750795"
        orientation="0,-1"
        id="guide17444" />
     <sodipodi:guide
-       position="125.23611,22.65796"
+       position="125.23611,22.657949"
        orientation="-1,0"
        id="guide17446"
        inkscape:label=""
        inkscape:locked="false"
        inkscape:color="rgb(0,0,255)" />
     <sodipodi:guide
-       position="132.29167,24.228951"
+       position="132.29167,24.22894"
        orientation="-1,0"
        id="guide17528"
        inkscape:label=""
        inkscape:locked="false"
        inkscape:color="rgb(0,0,255)" />
     <sodipodi:guide
-       position="138.04815,22.65796"
+       position="138.04815,22.657949"
        orientation="-1,0"
        id="guide17530"
        inkscape:label=""
        inkscape:locked="false"
        inkscape:color="rgb(0,0,255)" />
     <sodipodi:guide
-       position="146.40278,24.704386"
+       position="146.40278,24.704375"
        orientation="-1,0"
        id="guide17532"
        inkscape:label=""
        inkscape:locked="false"
        inkscape:color="rgb(0,0,255)" />
     <sodipodi:guide
-       position="138.89162,26.750811"
+       position="138.89162,26.7508"
        orientation="1,0"
        id="guide19388" />
     <sodipodi:guide
-       position="64.311988,70.344244"
+       position="64.311988,70.344232"
        orientation="0,-1"
        id="guide24457" />
     <sodipodi:guide
-       position="64.311989,3.4490522"
+       position="64.311989,3.4490409"
        orientation="0,-1"
        id="guide24459" />
     <sodipodi:guide
-       position="51.440551,32.07901"
+       position="51.440551,32.078999"
        orientation="0,-1"
        id="guide29101" />
     <sodipodi:guide
-       position="42.3399,24.64551"
+       position="42.3399,24.645499"
        orientation="0,-1"
        id="guide29103" />
     <sodipodi:guide
-       position="73.881542,61.426044"
+       position="73.881542,61.426032"
        orientation="0,-1"
        id="guide30528" />
+    <sodipodi:guide
+       position="119.54161,104.77611"
+       orientation="0,-1"
+       id="guide3513" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -361,37 +366,75 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path31846-0-3-5-5" />
     </marker>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient13559">
+      <stop
+         style="stop-color:#094bac;stop-opacity:1"
+         offset="0"
+         id="stop13555" />
+      <stop
+         style="stop-color:#0d6efd;stop-opacity:1"
+         offset="1"
+         id="stop13557" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient13559"
+       id="linearGradient13561"
+       x1="5.5205312"
+       y1="0.84943092"
+       x2="26.107155"
+       y2="26.208988"
+       gradientUnits="userSpaceOnUse" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-2-3-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path31846-6-1-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-6-0-1-6-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path31846-0-3-5-5-6" />
+    </marker>
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(44.250982,-101.92099)">
+     transform="translate(44.250982,-80.636118)">
     <rect
        style="fill:#ffffff;stroke:#ffffff;stroke-width:0.547023;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect59860"
        width="171.75504"
-       height="83.99971"
+       height="105.28458"
        x="-43.97747"
-       y="102.1945" />
+       y="80.90963" />
     <rect
        style="fill:#d5e5ff;stroke:#000000;stroke-width:0.642884;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect31"
        width="118.39975"
-       height="82.260178"
+       height="103.63142"
        x="-43.109123"
-       y="103.06285" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:6.00026px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="-5.7026725"
-       y="110.19987"
-       id="text8923"><tspan
-         sodipodi:role="line"
-         id="tspan8921"
-         style="stroke-width:0.16072"
-         x="-5.7026725"
-         y="110.19987">DESYNK board</tspan></text>
+       y="81.691612" />
     <g
        id="g30731"
        transform="matrix(0.60745059,0,0,0.60745059,-17.004666,40.375049)">
@@ -442,10 +485,10 @@
       <rect
          style="fill:#ffffff;stroke:#000000;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
          id="rect10105-3-5-9-0"
-         width="59.741825"
-         height="110.43536"
+         width="59.741821"
+         height="131.71333"
          x="157.82961"
-         y="178.11264" />
+         y="156.83467" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -565,17 +608,6 @@
        d="M 112.9499,175.28286 H 69.89306"
        id="path31737-6-6"
        sodipodi:nodetypes="cc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="84.286636"
-       y="174.0043"
-       id="text36077-5-8-1"><tspan
-         sodipodi:role="line"
-         id="tspan36075-9-9-0"
-         style="font-size:3.42872px;stroke-width:0.16072"
-         x="84.286636"
-         y="174.0043">Target Ready</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.428592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-6-0-1)"
        d="M 112.91585,141.03566 H 69.859005"
@@ -583,96 +615,42 @@
        sodipodi:nodetypes="cc" />
     <g
        id="g53310"
-       transform="matrix(0.60745059,0,0,0.60745059,-17.004672,49.0118)">
+       transform="matrix(0.60745059,0,0,0.60745059,-17.004688,49.0118)">
       <rect
          style="fill:#217821;stroke:#000000;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
          id="rect31-8"
-         width="22.850468"
-         height="135.41872"
+         width="22.850464"
+         height="170.60056"
          x="214.05182"
-         y="88.980148" />
+         y="53.798302" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:9.87777px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="-189.48438"
+         x="-171.89345"
          y="228.20212"
          id="text8923-4"
          transform="rotate(-90)"><tspan
            sodipodi:role="line"
            id="tspan8921-5"
            style="fill:#ffffff;stroke-width:0.264583"
-           x="-189.48438"
+           x="-171.89345"
            y="228.20212">Target device</tspan></text>
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="87.22567"
-       y="139.75706"
-       id="text36077-5-8-1-4"><tspan
-         sodipodi:role="line"
-         id="tspan36075-9-9-0-7"
-         style="font-size:3.42872px;stroke-width:0.16072"
-         x="87.22567"
-         y="139.75706">Success</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.428592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-6-0-1-6)"
        d="M 68.900082,123.8593 H 111.95692"
        id="path31737-6-6-5-6"
        sodipodi:nodetypes="cc" />
-    <g
-       id="g57993"
-       transform="matrix(0.77519381,0,0,0.77519381,-9.010753,22.967934)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:4.42305px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.207329"
-         x="117.69183"
-         y="118.2702"
-         id="text36077-5-8-1-4-9"><tspan
-           sodipodi:role="line"
-           id="tspan36075-9-9-0-7-3"
-           style="font-size:4.42305px;stroke-width:0.207329"
-           x="117.69183"
-           y="118.2702">Power Control</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:4.42305px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.207329"
-         x="119.42174"
-         y="124.76753"
-         id="text36077-5-8-1-4-9-7"><tspan
-           sodipodi:role="line"
-           id="tspan36075-9-9-0-7-3-4"
-           style="font-size:4.42305px;stroke-width:0.207329"
-           x="119.42174"
-           y="124.76753">Target Reset</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:4.42305px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.207329"
-         x="130.97824"
-         y="129.2563"
-         id="text36077-5-8-1-4-9-7-5"><tspan
-           sodipodi:role="line"
-           id="tspan36075-9-9-0-7-3-4-2"
-           style="font-size:4.42305px;stroke-width:0.207329"
-           x="130.97824"
-           y="129.2563">...</tspan></text>
-    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.428592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-6-0-1-6-2)"
+       d="M 68.900084,106.68294 H 111.95692"
+       id="path31737-6-6-5-6-1"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.428592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-6-0-6)"
        d="m 68.90009,158.15927 h 43.05684"
        id="path31737-6-6-2"
        sodipodi:nodetypes="cc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="83.659676"
-       y="156.37158"
-       id="text36077-5-8-1-0"><tspan
-         sodipodi:role="line"
-         id="tspan36075-9-9-0-6"
-         style="font-size:3.42872px;stroke-width:0.16072"
-         x="83.659676"
-         y="156.37158">Target Clock</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
@@ -687,14 +665,30 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="2.7253258"
+       x="-2.0289896"
        y="122.65741"
        id="text36077-3-4"><tspan
          sodipodi:role="line"
          id="tspan36075-7-7"
          style="font-size:3.42872px;stroke-width:0.16072"
-         x="2.7253258"
-         y="122.65741">Reset</tspan></text>
+         x="-2.0289896"
+         y="122.65741">Soft Reset</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.428592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-2-3-9)"
+       d="M -4.7706694,106.70113 H 19.099485"
+       id="path31737-1-9-6"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+       x="-1.9971186"
+       y="105.49921"
+       id="text36077-3-4-0"><tspan
+         sodipodi:role="line"
+         id="tspan36075-7-7-6"
+         style="font-size:3.42872px;stroke-width:0.16072"
+         x="-1.9971186"
+         y="105.49921">Soft Reset</tspan></text>
     <g
        id="g60397"
        transform="matrix(0.77519381,0,0,0.77519381,-9.8924276,22.967934)">
@@ -718,6 +712,29 @@
            x="50.98465"
            y="131.67514">Target Control</tspan></text>
     </g>
+    <g
+       id="g60397-1"
+       transform="matrix(0.77519381,0,0,0.77519381,-9.8924343,5.7915665)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect10105-3-3-2"
+         width="80.400093"
+         height="25.46977"
+         x="61.565559"
+         y="152.97508"
+         transform="matrix(0.78361125,0,0,0.78361125,-9.6035359,0.29766825)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:5.52882px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.20733"
+         x="50.98465"
+         y="131.67514"
+         id="text8923-6-61-7"><tspan
+           sodipodi:role="line"
+           id="tspan8921-7-29-0"
+           style="font-size:5.52882px;stroke-width:0.20733"
+           x="50.98465"
+           y="131.67514">Target Control</tspan></text>
+    </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 82.526693,163.80977 h 4.906276 l 2e-6,-4.09285 h 4.906276 l -2e-6,4.09285 h 1.457919 v -4.09285 h 0.84347 v 4.09285 h 2.60488 l 7e-6,-4.09285 h 4.906269 v 4.09285"
@@ -728,5 +745,115 @@
        d="m -3.4157376,167.75638 h 4.906276 l 2e-6,-4.09285 h 4.906276 l -2e-6,4.09285 h 4.9062686 l 7e-6,-4.09285 h 4.906269 v 4.09285"
        id="path17567-6"
        sodipodi:nodetypes="ccccccccc" />
+    <g
+       id="g1342"
+       transform="translate(0,-19.983342)">
+      <g
+         id="g3412"
+         transform="translate(13.065432)">
+        <g
+           id="g3698"
+           transform="translate(7.7473553)">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:6.00026px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+             x="-9.4864531"
+             y="112.85552"
+             id="text8923"><tspan
+               sodipodi:role="line"
+               id="tspan8921"
+               style="stroke-width:0.16072"
+               x="-9.4864531"
+               y="112.85552">DESYNK</tspan></text>
+          <g
+             inkscape:label="Layer 1"
+             id="layer1-5"
+             transform="matrix(0.39630373,0,0,0.39630373,-24.392271,103.90786)">
+            <circle
+               style="fill:url(#linearGradient13561);fill-opacity:1;stroke:none;stroke-width:0.705555"
+               id="path914"
+               cx="16.933332"
+               cy="16.933332"
+               r="16.933332" />
+            <circle
+               style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               id="path1036"
+               cx="16.933332"
+               cy="16.933332"
+               r="15.783225" />
+            <path
+               style="fill:none;stroke:#fffffd;stroke-width:1.05833;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 4.3792788,22.577776 h 2.450362 V 11.288888 H 14.11111 v 11.288888 h 5.644444 V 11.288888 l 1.897303,10e-7 1.897303,8.809694 1.897303,-8.809694 2.057282,-10e-7 v 11.288888 h 1.64669"
+               id="path2662"
+               sodipodi:nodetypes="ccccccccccccc" />
+            <circle
+               style="fill:none;fill-opacity:1;stroke:#05285b;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none"
+               id="circle15069"
+               cx="16.933332"
+               cy="16.933332"
+               r="16.801041" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+       x="82.967377"
+       y="174.0043"
+       id="text36077-5-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan36075-9-9-0"
+         style="font-size:3.42872px;stroke-width:0.16072"
+         x="82.967377"
+         y="174.0043">Target Ready</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+       x="87.151993"
+       y="139.75706"
+       id="text36077-5-8-1-4"><tspan
+         sodipodi:role="line"
+         id="tspan36075-9-9-0-7"
+         style="font-size:3.42872px;stroke-width:0.16072"
+         x="87.151993"
+         y="139.75706">Success</tspan></text>
+    <g
+       id="g57993"
+       transform="matrix(0.77519381,0,0,0.77519381,-8.413929,22.967934)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.42305px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.207329"
+         x="119.42174"
+         y="127.78439"
+         id="text36077-5-8-1-4-9-7"><tspan
+           sodipodi:role="line"
+           id="tspan36075-9-9-0-7-3-4"
+           style="font-size:4.42305px;stroke-width:0.207329"
+           x="119.42174"
+           y="127.78439">Target Reset</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+       x="83.585991"
+       y="156.37158"
+       id="text36077-5-8-1-0"><tspan
+         sodipodi:role="line"
+         id="tspan36075-9-9-0-6"
+         style="font-size:3.42872px;stroke-width:0.16072"
+         x="83.585991"
+         y="156.37158">Target Clock</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
+       x="83.055275"
+       y="104.67951"
+       id="text36077-5-8-1-4-9"><tspan
+         sodipodi:role="line"
+         id="tspan36075-9-9-0-7-3"
+         style="font-size:3.42872px;stroke-width:0.16072"
+         x="83.055275"
+         y="104.67951">Target Power</tspan></text>
   </g>
 </svg>
