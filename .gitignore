@@ -1,3 +1,4 @@
+desynk.bin
 *.log
 *.vcd
 *_tb
