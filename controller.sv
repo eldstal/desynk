@@ -24,7 +24,7 @@ module controller (
   output reg target_soft_reset,
 
   // If the soft reset times out, this is a hard reset
-  output reg target_hard_reset,
+  output reg target_hard_reset
 );
 
 

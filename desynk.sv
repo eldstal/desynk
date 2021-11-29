@@ -5,6 +5,7 @@ module top(
   output LED1,
 
   output P1A1,
+  output P1A2,
   output P1A3,
   output P1A4,
   input  P1A7,
@@ -18,6 +19,7 @@ module top(
  */
 wire io_reset;           assign io_reset           = BTN1;
 wire io_target_clk;      assign io_target_clk      = P1A1;
+wire io_target_reset;    assign io_target_reset    = P1A2;
 wire io_target_power;    assign io_target_power    = P1A3;
 wire io_target_throttle; assign io_target_throttle = P1A4;
 wire io_target_ready;    assign io_target_ready    = P1A7;
@@ -73,18 +75,28 @@ controller Controller (
 );
 
 /*
- * The target control module
- * In the simplest case, both soft reset and hard reset are just power cycling
- * the target directly.
+ * The target control modules
+ * A soft reset might control the target's RESET pin
+ * while a hard reset controls the power directly
  */
+
+target_control_reset #(
+  .RESET_CYCLES(480000),   // 10ms at 48MHz
+  .ACTIVE_HIGH(1)
+) TargetReset (
+  .rst(rst),
+  .clk(CLK),
+  .trigger(target_soft_reset),
+  .target_reset(io_target_reset)
+);
 
 target_control_power #(
   .GUARD_CYCLES(100),
   .RESET_CYCLES(4800000)   // 100ms at 48MHz
-) TargetControl (
+) TargetPower (
   .rst(rst),
   .clk(CLK),
-  .trigger(target_soft_reset | target_hard_reset),
+  .trigger(target_hard_reset),
   .target_power(io_target_power),
   .target_throttle(io_target_throttle)
 );

@@ -37,9 +37,9 @@ module desynk_tb;
 
 
   top DUT (
-           .rst(rst),
-           .clk(clk),
-           .led1(led1)
+           .BTN1(rst),
+           .CLK(clk),
+           .LED1(led1)
           );
 
 
