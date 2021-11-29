@@ -38,11 +38,11 @@ A target device, running something sensitive. For example, computes some hash an
 
 Connections to the DESYNK board:
 
-* CLK which drives the target device
+* TARGET_CLK which drives the target device
 * TRIGGER which the target sets HIGH at a fixed time before the check
 * SUCCESS which the target sets HIGH if the check is bypassed
 * POWER which enables the power feed to the target device
-* BROWNOUT which grounds the power feed of the target device
+* THROTTLE which grounds the power feed of the target device
 
 ## Glitch Modes
 ### `glitch_clk_fast`

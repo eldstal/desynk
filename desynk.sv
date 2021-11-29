@@ -1,20 +1,35 @@
 module top(
-  input rst,
-  input clk,
-  output led1,
+  input CLK,
 
+  input BTN1,
+  output LED1,
 
-  output target_clk,
+  output P1A1,
+  output P1A3,
+  output P1A4,
+  input  P1A7,
+  input  P1A8
 
-  input target_ready_gpio,
-  input target_success_gpio
 );
 
-// This goes to all over the place
-// It has no glitches introduced, and is never disabled.
-// It is the basis for the target's clock and everything
-// that needs to be synchronized to it.
-// clean_target_clock is slower than clk.
+/*
+ * I/O pin mapping
+ * Change these as you please
+ */
+wire io_reset;           assign io_reset           = BTN1;
+wire io_target_clk;      assign io_target_clk      = P1A1;
+wire io_target_power;    assign io_target_power    = P1A3;
+wire io_target_throttle; assign io_target_throttle = P1A4;
+wire io_target_ready;    assign io_target_ready    = P1A7;
+wire io_target_success;  assign io_target_success  = P1A8;
+
+/* This goes to all over the place
+ * It has no glitches introduced, and is never disabled.
+ * It is the basis for the target's clock and everything
+ * that needs to be synchronized to it.
+ * clean_target_clock is slower than CLK.
+ */
+wire rst; assign rst = io_reset;
 wire clean_target_clock;
 
 // Signals to and from external modules
@@ -27,6 +42,8 @@ wire [31:0] delay_cycles;
 wire set_delay;
 wire trigger_arm;
 wire success_arm;
+wire target_soft_reset;
+wire target_hard_reset;
 
 /*
  * FPGA runs at 48MHz.
@@ -37,7 +54,7 @@ wire success_arm;
  */
 clk_div_3 Divider (
   .rst(rst),
-  .clk_i(clk),
+  .clk_i(CLK),
   .clk_o(clean_target_clock)
 );
 
@@ -46,13 +63,30 @@ clk_div_3 Divider (
  */
 controller Controller (
   .rst(rst),
-  .clk(clk),
+  .clk(CLK),
   .trigger(trigger),
   .success(success),
   .delay(delay_cycles),
   .set_delay(set_delay),
   .trigger_arm(trigger_arm),
   .success_arm(success_arm)
+);
+
+/*
+ * The target control module
+ * In the simplest case, both soft reset and hard reset are just power cycling
+ * the target directly.
+ */
+
+target_control_power #(
+  .GUARD_CYCLES(100),
+  .RESET_CYCLES(4800000)   // 100ms at 48MHz
+) TargetControl (
+  .rst(rst),
+  .clk(CLK),
+  .trigger(target_soft_reset | target_hard_reset),
+  .target_power(io_target_power),
+  .target_throttle(io_target_throttle)
 );
 
 /*
@@ -65,8 +99,8 @@ detect_edge #(
  ) Trigger (
 
   .rst(rst),
-  .clk(clk),
-  .target(target_ready_gpio),
+  .clk(CLK),
+  .target(io_target_ready),
   .arm(trigger_arm),
   .trigger(trigger)
 
@@ -77,7 +111,7 @@ detect_edge #(
  */
 trigger_delay #(.TRIG_CYCLES(2)) Delay (
   .rst(rst),
-  .clk(clk),
+  .clk(CLK),
   .trigger(trigger),
   .clean_target_clock(clean_target_clock),
   .delay(delay_cycles),
@@ -91,10 +125,10 @@ trigger_delay #(.TRIG_CYCLES(2)) Delay (
  */
 glitch_clk_fast #(.N_CYCLES(2)) Glitch (
   .rst(rst),
-  .clk(clk),
+  .clk(CLK),
   .trig(delayed_trigger),
   .clean_target_clock(clean_target_clock),
-  .clk_o(target_clk)
+  .clk_o(io_target_clk)
 );
 
 /*
@@ -107,8 +141,8 @@ detect_edge #(
  ) Success (
 
   .rst(rst),
-  .clk(clk),
-  .target(target_success_gpio),
+  .clk(CLK),
+  .target(io_target_success),
   .arm(success_arm),
   .trigger(success)
 
@@ -117,13 +151,13 @@ detect_edge #(
 
 reg led;
 
-assign led1 = led;
+assign LED1 = led;
 
 initial begin
   led <= 0;
 end
 
-always @(posedge clk) begin
+always @(posedge CLK) begin
   led <= !led;
 end
 
