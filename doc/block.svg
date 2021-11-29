@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.131351"
-     inkscape:cx="296.99006"
-     inkscape:cy="147.16918"
+     inkscape:zoom="1.5999719"
+     inkscape:cx="320.00561"
+     inkscape:cy="213.44124"
      inkscape:window-width="1918"
      inkscape:window-height="1041"
      inkscape:window-x="1920"
@@ -167,6 +167,10 @@
        position="119.54161,104.77611"
        orientation="0,-1"
        id="guide3513" />
+    <sodipodi:guide
+       position="64.311984,87.520596"
+       orientation="0,-1"
+       id="guide1521" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -681,14 +685,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.42872px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16072"
-       x="-1.9971186"
+       x="-2.8652978"
        y="105.49921"
        id="text36077-3-4-0"><tspan
          sodipodi:role="line"
          id="tspan36075-7-7-6"
          style="font-size:3.42872px;stroke-width:0.16072"
-         x="-1.9971186"
-         y="105.49921">Soft Reset</tspan></text>
+         x="-2.8652978"
+         y="105.49921">Hard Reset</tspan></text>
     <g
        id="g60397"
        transform="matrix(0.77519381,0,0,0.77519381,-9.8924276,22.967934)">
