@@ -1,6 +1,6 @@
-# 12 MHz clock
+# 32 MHz clock
 set_io -nowarn CLK        35
-set_frequency CLK 12
+set_frequency CLK 32
 
 # RS232
 set_io -nowarn RX          6

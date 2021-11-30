@@ -48,13 +48,13 @@ wire target_soft_reset;
 wire target_hard_reset;
 
 /*
- * FPGA runs at 48MHz.
- * Target at 16MHz, so divide clock by 3
+ * FPGA runs at 32MHz
+ * Target at 16MHz, so divide clock by 2
  * This clock will be fed through the glitcher
  * before being passed to the target device.
  *
  */
-clk_div_3 Divider (
+clk_div_2 Divider (
   .rst(rst),
   .clk_i(CLK),
   .clk_o(clean_target_clock)
@@ -81,7 +81,7 @@ controller Controller (
  */
 
 target_control_reset #(
-  .RESET_CYCLES(480000),   // 10ms at 48MHz
+  .RESET_CYCLES(320000),   // 10ms at 32MHz
   .ACTIVE_HIGH(1)
 ) TargetReset (
   .rst(rst),
@@ -92,7 +92,7 @@ target_control_reset #(
 
 target_control_power #(
   .GUARD_CYCLES(100),
-  .RESET_CYCLES(4800000)   // 100ms at 48MHz
+  .RESET_CYCLES(3200000)   // 100ms at 32MHz
 ) TargetPower (
   .rst(rst),
   .clk(CLK),
