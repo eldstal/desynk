@@ -31,16 +31,44 @@ module desynk_tb;
 
     #40;
     $finish;
-
+ 
   end
 
+  wire target_clk;
 
 
-  top DUT (
-           .BTN1(rst),
-           .CLK(clk),
-           .LED1(led1)
-          );
+  dummy_target_clk #(
+
+  ) TARGET (
+    .clk(target_clk),
+    .rst(rst),
+
+    .soft_reset(target_reset),
+    .power(target_power),
+    .throttle(target_throttle),
+
+    .ready(target_ready),
+    .success(target_success)
+
+  );
+
+
+  desynk #(
+  /*
+   * Parameters
+   */
+
+  ) DUT (
+    .clk(clk),
+    .io_reset(rst),
+    .io_target_clk(target_clk),
+    .io_target_reset(target_reset),
+    .io_target_power(target_power),
+    .io_target_throttle(target_throttle),
+    .io_target_ready(target_ready),
+    .io_target_success(target_success)
+
+  );
 
 
 endmodule

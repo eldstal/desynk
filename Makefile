@@ -9,8 +9,9 @@ TESTBENCHES:=$(wildcard *_tb.sv)
 TB_WAVES:=$(patsubst %_tb.sv,%_tb.vcd,$(TESTBENCHES))
 MODULES:=$(filter-out $(TESTBENCHES),$(wildcard *.sv))
 
+TEST_SRC:=$(wildcard dummy*.sv)
 ADD_SRC:=$(filter-out top.sv,$(MODULES))
-ADD_SRC:=$(filter-out $(wildcard dummy*.sv),$(ADD_SRC))
+ADD_SRC:=$(filter-out $(TEST_SRC),$(ADD_SRC))
 ADD_CLEAN:=$(TB_WAVES)
 
 all: $(PROJ).bin
@@ -31,7 +32,7 @@ test: $(TB_WAVES)
 %.bin: %.asc
 	icepack $< $@
 
-%_tb: %_tb.sv %.sv $(ADD_SRC)
+%_tb: %_tb.sv %.sv $(ADD_SRC) $(TEST_SRC)
 	iverilog -g2012 -o $@ $^
 
 %_tb.vcd: %_tb

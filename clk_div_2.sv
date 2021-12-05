@@ -5,7 +5,12 @@ module clk_div_2 (
 );
 
 always @(posedge clk_i) begin
-  clk_o <= !clk_o;
+  if (rst) begin
+    clk_o <= clk_i;
+  end
+  else begin
+    clk_o <= !clk_o;
+  end
 end
 
 
