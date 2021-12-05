@@ -1,6 +1,6 @@
 # Gleefully stolen from https://github.com/icebreaker-fpga/icebreaker-verilog-examples
 
-PROJ=desynk
+PROJ=top
 PIN_DEF=icebreaker.pcf
 DEVICE=up5k
 PACKAGE=sg48
@@ -9,7 +9,8 @@ TESTBENCHES:=$(wildcard *_tb.sv)
 TB_WAVES:=$(patsubst %_tb.sv,%_tb.vcd,$(TESTBENCHES))
 MODULES:=$(filter-out $(TESTBENCHES),$(wildcard *.sv))
 
-ADD_SRC:=$(filter-out desynk.sv,$(MODULES))
+ADD_SRC:=$(filter-out top.sv,$(MODULES))
+ADD_SRC:=$(filter-out $(wildcard dummy*.sv),$(ADD_SRC))
 ADD_CLEAN:=$(TB_WAVES)
 
 all: $(PROJ).bin
