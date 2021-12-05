@@ -44,6 +44,9 @@ Connections to the DESYNK board:
 * POWER which enables the power feed to the target device
 * THROTTLE which grounds the power feed of the target device
 
+### Configuration
+Edit `top.sv` to modify the pin mapping and set various parameters. Eventually, the parameters specified here will be used to select which modules are active.
+
 ## Glitch Modes
 ### `glitch_clk_fast`
 Injects a number of faster clock cycles on the target's clock input. The following figure shows three different
@@ -81,6 +84,3 @@ Modular glitch mode:
 * Multiple quick cycles
 * Power glitches
 
-Some sort of parameter based way to select and configure the modules.
-Ideally, you can alter some commented parameters in a "config" file and then just instantiate a `desynk` which will
-be configured as you want it.

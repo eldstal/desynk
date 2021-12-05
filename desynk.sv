@@ -138,7 +138,7 @@ glitch_clk_fast #(.N_CYCLES(2)) Glitch (
 
 /*
  * The target's SUCCESS signal is a basic I/O pin.
- * On a falling edge, we know our attack was successful
+ * On a rising edge, we know our attack was successful
  */
 detect_edge #(
    .TRIG_CYCLES(2),
